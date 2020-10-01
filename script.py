@@ -25,6 +25,7 @@ for fname in os.listdir('/content'):
         plt.xticks([])
         plt.yticks([])
         _ = plt.imshow(img.reshape((150, 150, 3)))
+        plt.show()
         features = conv_base.predict(img)
         features = features.reshape((1, 4*4*512))
         model = models.load_model('/content/model.h5') 
