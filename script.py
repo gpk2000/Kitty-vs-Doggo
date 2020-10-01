@@ -15,8 +15,6 @@ conv_base = VGG16(weights='imagenet',
 url = 'https://github.com/gpk2000/Kitty-vs-Doggo/blob/master/pretrained_nodataug.h5?raw=true'
 filename, headers = urllib.request.urlretrieve(url, filename="/content/model.h5")
 
-
-
 for fname in os.listdir('/content'):
     if fname.lower().endswith(('.png', '.jpg', '.jpeg')):
         img = image.load_img(os.path.join('/content', fname), target_size=(150, 150))
