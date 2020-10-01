@@ -15,7 +15,7 @@ conv_base = VGG16(weights='imagenet',
 url = 'https://github.com/gpk2000/Kitty-vs-Doggo/blob/master/pretrained_nodataug.h5?raw=true'
 filename, headers = urllib.request.urlretrieve(url, filename="/content/model.h5")
 
-model = models.load_model('/content/model.h5') 
+
 
 for fname in os.listdir('/content'):
     if fname.lower().endswith(('.png', '.jpg', '.jpeg')):
@@ -28,6 +28,7 @@ for fname in os.listdir('/content'):
         _ = plt.imshow(img.reshape((150, 150, 3)))
         features = conv_base.predict(img)
         features = features.reshape((1, 4*4*512))
+        model = models.load_model('/content/model.h5') 
         acc = model.predict(features)
         if acc < 0.5:
             accuracy_per = (1 - acc) * 100
