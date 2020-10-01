@@ -1,5 +1,6 @@
 import os
 import tensorflow as tf
+tf.get_logger().setLevel('INFO')
 from keras.preprocessing import image
 import matplotlib.pyplot as plt
 import numpy as np
