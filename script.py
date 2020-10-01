@@ -22,9 +22,6 @@ for fname in os.listdir('/content'):
         img = image.img_to_array(img)
         img = np.array([img])
         img = img / 255
-        plt.xticks([])
-        plt.yticks([])
-        _ = plt.imshow(img.reshape((150, 150, 3)))
         features = conv_base.predict(img)
         features = features.reshape((1, 4*4*512))
         model = models.load_model('/content/model.h5') 
@@ -37,4 +34,8 @@ for fname in os.listdir('/content'):
             accuracy_per = acc * 100
             print("The model is %.2f percent sure that the below image is a dog" % accuracy_per)
             os.remove(os.path.join('/content', fname))
+        plt.xticks([])
+        plt.yticks([])
+        _ = plt.imshow(img.reshape((150, 150, 3)))
         plt.show()
+        break
