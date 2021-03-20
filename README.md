@@ -41,7 +41,7 @@ All you need to do is to click on the "Open in Colab" badge at the top of this r
 ## Got any suggestions
 I always welcome any type of suggestion whether it is related to the deep learning part, or whether to improvise the current code.
 
-You can also ping me on Discord: TheSpooN#8963
+You can also ping me on Discord: dottomato#8963
 
 ---
 
